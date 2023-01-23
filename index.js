@@ -38,11 +38,11 @@ app.use("/submit", SubmitRouter);
 app.use("/event", EventRouter);
 
 app.get("/", async (req, res) => {
-  const d = await Submit.deleteMany({});
+  // const d = await Submit.deleteMany({});
 
-  await Event.deleteMany({});
+  // await Event.deleteMany({});
 
-  console.log(d);
+  // console.log(d);
 
   res.send("server is running");
 });
