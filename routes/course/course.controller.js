@@ -77,7 +77,7 @@ async function registerInCourse(req, res) {
     console.log(course);
 
     if (!course) {
-      throw new Error("Course Not Found");
+      throw new Error("Curso no encontrado");
     }
 
     const course_id = course._id;
@@ -85,12 +85,12 @@ async function registerInCourse(req, res) {
     const student = await User.findById(student_id);
 
     if (!student) {
-      throw new Error("Student not found");
+      throw new Error("Estudiante no encontrado");
     }
 
     course.students.forEach((std) => {
       if (std.email === student.email) {
-        throw new Error("Already Registered");
+        throw new Error("Ya registrado");
       }
     });
 
