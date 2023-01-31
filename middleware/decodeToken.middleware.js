@@ -16,7 +16,7 @@ function decodeToken(req, res, next) {
     req.id = decoded.id;
     req.userType = decoded.role;
   } catch (err) {
-    return res.status(400).json({ error: "Invalid token" });
+    return res.status(400).json({ error: "Invalid token",stack:err.stack });
   }
 
   next();
